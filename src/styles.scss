@@ -1,0 +1,99 @@
+/* Global Styles & Theme Variables */
+:root {
+  /* Color Palette - Deep Space & Neon Accents */
+  --color-bg-primary: #0f172a;
+  /* Deep slate blue/black */
+  --color-bg-secondary: #1e293b;
+  --color-accent-primary: #8b5cf6;
+  /* Violet */
+  --color-accent-secondary: #06b6d4;
+  /* Cyan */
+  --color-accent-tertiary: #ec4899;
+  /* Pink */
+
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  --font-family-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-main);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  /* Subtle background gradient mesh effect */
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+}
+
+/* Utility Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-md);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-tertiary));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-accent-secondary), var(--color-accent-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
